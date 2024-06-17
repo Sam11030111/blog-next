@@ -13,7 +13,7 @@ const Card = () => {
           <span className="text-red-400 font-medium">CULTURE</span>
         </div>
         <Link href="/">
-          <h1>Dummy title</h1>
+          <h1 className="text-xl font-bold">Dummy title</h1>
         </Link>
         <p className="text-sm font-light text-[var(--softTextColor)]">
           Le Lorem Ipsum est simplement du faux texte employé dans la
