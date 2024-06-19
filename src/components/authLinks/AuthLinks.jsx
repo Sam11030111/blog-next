@@ -11,7 +11,7 @@ const AuthLinks = () => {
 
   console.log(isOpen);
   // temporary
-  const status = "notauthenticated";
+  const status = "authenticated";
 
   return (
     <>
