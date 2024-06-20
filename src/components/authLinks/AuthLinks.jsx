@@ -1,5 +1,6 @@
 "use client";
 
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -9,13 +10,12 @@ import { IoClose } from "react-icons/io5";
 const AuthLinks = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(isOpen);
   // temporary
-  const status = "authenticated";
+  const { status } = useSession();
 
   return (
     <>
-      {status === "notauthenticated" ? (
+      {status === "unauthenticated" ? (
         <Link className="hidden sm:flex" href="/login">
           Login
         </Link>
@@ -24,7 +24,9 @@ const AuthLinks = () => {
           <Link className="hidden sm:flex" href="/write">
             Write
           </Link>
-          <span className="cursor-pointer hidden sm:flex">Logout</span>
+          <span onClick={signOut} className="cursor-pointer hidden sm:flex">
+            Logout
+          </span>
         </>
       )}
       {isOpen ? (
